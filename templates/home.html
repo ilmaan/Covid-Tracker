@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid Application</title>
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/covid.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body>
+
+
+    <!--Hey! This is the original version
+of Simple CSS Waves-->
+
+<div class="header">
+<br>
+    <div class="card1">
+        <div class="card-content">
+          <h1>{{selectedcountry}}</h1>
+          <p><small></small></p>
+          <p class="related"><strong>See also: </strong><a href="https://ilmaan.pythonanywhere.com" target="_blank">Ilmaan Zia <i>Portfolio</i></a></p>
+          <p class="related"><strong>Contributions: </strong><a href="https://ilmaan.pythonanywhere.com/media/ilmaanresearch-2017-310-056.pdf" target="_blank">Face Mask Detection <i>Model</i></a></p>
+        </div>
+      </div>
+      
+
+
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        <select name="selectedcountry" required >
+            {% for country in mylist %}
+            <option selected='Pakistan' >
+                {{country}}
+            </option>
+            {% endfor %}
+        </select>
+        <!-- <input type="submit" name="sub"> -->
+        <div class="container-buttons">
+            <div class="container-button">
+                <input type="submit" name="sub" class="button button--bounce">
+            </div>
+            
+        </div>
+
+    </form>
+    <ul>
+
+        <li class="card">
+            <div class="card__flipper">
+                <div class="card__front">
+                    <p class="card__name"><span>New</span><br>Cases</p>
+                    <p class="card__num">{{new}}</p>
+                </div>
+            </div>
+        </li>
+        <li class="card">
+            <div class="card__flipper">
+                <div class="card__front">
+                    <p class="card__name"><span>Total</span><br>Cases</p>
+                    <p class="card__num">{{total}}</p>
+                </div>
+            </div>
+        </li>
+        <li class="card">
+            <div class="card__flipper">
+                <div class="card__front">
+                    <p class="card__name"><span>Active</span><br>Cases</p>
+                    <p class="card__num">{{active}}</p>
+                </div>
+            </div>
+        </li>
+        <li class="card">
+            <div class="card__flipper">
+                <div class="card__front">
+                    <p class="card__name"><span>Critical</span><br>Cases</p>
+                    <p class="card__num">{{critical}}</p>
+                </div>
+            </div>
+        </li>
+        <li class="card">
+            <div class="card__flipper">
+                <div class="card__front">
+                    <p class="card__name"><span>Death</span><br>Cases</p>
+                    <p class="card__num">{{deaths}}</p>
+                </div>
+            </div>
+        </li>
+        <li class="card">
+            <div class="card__flipper">
+                <div class="card__front">
+                    <p class="card__name"><span>Recovered</span><br>Cases</p>
+                    <p class="card__num">{{recovered}}</p>
+                </div>
+            </div>
+        </li>
+
+
+    </ul>
+
+    <p>Developed By-<a href="https://ilmaan.pythonanywhere.com" target="_blank" style="color: #fff;">ILMAAN ZIA</a></p>
+    <!--Content before waves-->
+    <div class="inner-header flex">
+   
+    </div>
+    
+    <!--Waves Container-->
+    <div>
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+    <defs>
+    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+    </defs>
+    <g class="parallax">
+    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+    </g>
+    </svg>
+    </div>
+    <!--Waves end-->
+    
+    </div>
+    <!--Header ends-->
+    
+
+
+
+</body>
+
+</html>
+
+<script>
+    // why it doesn't work on firefox?
+var card = $(".card1");
+
+$(document).on("mousemove",function(e) {  
+  var ax = -($(window).innerWidth()/2- e.pageX)/20;
+  var ay = ($(window).innerHeight()/2- e.pageY)/10;
+  card.attr("style", "transform: rotateY("+ax+"deg) rotateX("+ay+"deg);-webkit-transform: rotateY("+ax+"deg) rotateX("+ay+"deg);-moz-transform: rotateY("+ax+"deg) rotateX("+ay+"deg)");
+});
+</script>

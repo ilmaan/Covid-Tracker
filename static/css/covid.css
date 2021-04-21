@@ -1,0 +1,415 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    background: #1f1f1f;
+    color: white;
+    font-family: 'Lato';
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    text-align: center;
+    overflow-x: hidden;
+  }
+  .card {
+    float: left;
+    position: relative;
+    width: calc(100% * .3333 - 30px + .3333 * 30px);
+    height: 340px;
+    margin: 0 30px 30px 0;
+    perspective: 1000;
+  }
+  .card:first-child .card__front {
+    background: #5271C2;
+  }
+  .card:first-child .card__num {
+    /* text-shadow: 1px 1px rgba(52, 78, 147, 0.8) , 2px 2px #5271c2 , 3px 3px #6182d9 , 4px 4px #6a8de7 , 5px 5px #7094f1 , 6px 6px #7499f7 , 7px 7px #779cfc , 8px 8px #7a9fff , 9px 9px #7ca1ff , 10px 10px #7ea3ff , 11px 11px #7fa5ff , 12px 12px #80a6ff , 13px 13px #81a7ff , 14px 14px #82a8ff , 15px 15px #83a9ff , 16px 16px #83aaff , 17px 17px #84abff , 18px 18px #85abff , 19px 19px #85acff , 20px 20px #85acff , 21px 21px #86adff , 22px 22px #86adff , 23px 23px #86adff , 24px 24px #87aeff , 25px 25px #87aeff , 26px 26px #87aeff , 27px 27px #88afff , 28px 28px #88afff , 29px 29px #88afff , 30px 30px #88afff , 31px 31px #88b0ff , 32px 32px #89b0ff , 33px 33px #89b0ff , 34px 34px #89b0ff , 35px 35px #89b0ff , 36px 36px #89b1ff , 37px 37px #89b1ff , 38px 38px #89b1ff , 39px 39px #89b1ff , 40px 40px #8ab1ff , 41px 41px #8ab1ff , 42px 42px #8ab1ff , 43px 43px #8ab1ff , 44px 44px #8ab2ff , 45px 45px #8ab2ff , 46px 46px #8ab2ff , 47px 47px #8ab2ff , 48px 48px #8ab2ff , 49px 49px #8ab2ff , 50px 50px #8ab2ff , 51px 51px #8bb2ff , 52px 52px #8bb2ff , 53px 53px #8bb2ff , 54px 54px #8bb2ff , 55px 55px #8bb2ff , 56px 56px #8bb2ff , 57px 57px #8bb3ff , 58px 58px #8bb3ff , 59px 59px #8bb3ff , 60px 60px #8bb3ff , 61px 61px #8bb3ff , 62px 62px #8bb3ff , 63px 63px #8bb3ff , 64px 64px #8bb3ff , 65px 65px #8bb3ff , 66px 66px #8bb3ff , 67px 67px #8bb3ff , 68px 68px #8bb3ff , 69px 69px #8bb3ff , 70px 70px #8bb3ff , 71px 71px #8bb3ff , 72px 72px #8cb3ff , 73px 73px #8cb3ff , 74px 74px #8cb3ff , 75px 75px #8cb3ff , 76px 76px #8cb3ff , 77px 77px #8cb3ff , 78px 78px #8cb4ff , 79px 79px #8cb4ff , 80px 80px #8cb4ff , 81px 81px #8cb4ff , 82px 82px #8cb4ff , 83px 83px #8cb4ff , 84px 84px #8cb4ff , 85px 85px #8cb4ff , 86px 86px #8cb4ff , 87px 87px #8cb4ff , 88px 88px #8cb4ff , 89px 89px #8cb4ff , 90px 90px #8cb4ff , 91px 91px #8cb4ff , 92px 92px #8cb4ff , 93px 93px #8cb4ff , 94px 94px #8cb4ff , 95px 95px #8cb4ff , 96px 96px #8cb4ff , 97px 97px #8cb4ff , 98px 98px #8cb4ff , 99px 99px #8cb4ff , 100px 100px #8cb4ff; */
+  }
+  .card:nth-child(2) .card__front {
+    background: #35a541;
+  }
+  .card:nth-child(2) .card__num {
+    /* text-shadow: 1px 1px rgba(34, 107, 42, 0.8) , 2px 2px #35a541 , 3px 3px #3ec24c , 4px 4px #44d353 , 5px 5px #48df58 , 6px 6px #4ae75b , 7px 7px #4ced5e , 8px 8px #4ef25f , 9px 9px #4ff661 , 10px 10px #50f962 , 11px 11px #51fc63 , 12px 12px #52fe64 , 13px 13px #52ff65 , 14px 14px #53ff65 , 15px 15px #53ff66 , 16px 16px #54ff67 , 17px 17px #54ff67 , 18px 18px #54ff67 , 19px 19px #55ff68 , 20px 20px #55ff68 , 21px 21px #55ff68 , 22px 22px #55ff69 , 23px 23px #56ff69 , 24px 24px #56ff69 , 25px 25px #56ff69 , 26px 26px #56ff6a , 27px 27px #56ff6a , 28px 28px #56ff6a , 29px 29px #56ff6a , 30px 30px #57ff6a , 31px 31px #57ff6a , 32px 32px #57ff6a , 33px 33px #57ff6b , 34px 34px #57ff6b , 35px 35px #57ff6b , 36px 36px #57ff6b , 37px 37px #57ff6b , 38px 38px #57ff6b , 39px 39px #57ff6b , 40px 40px #57ff6b , 41px 41px #58ff6b , 42px 42px #58ff6b , 43px 43px #58ff6c , 44px 44px #58ff6c , 45px 45px #58ff6c , 46px 46px #58ff6c , 47px 47px #58ff6c , 48px 48px #58ff6c , 49px 49px #58ff6c , 50px 50px #58ff6c , 51px 51px #58ff6c , 52px 52px #58ff6c , 53px 53px #58ff6c , 54px 54px #58ff6c , 55px 55px #58ff6c , 56px 56px #58ff6c , 57px 57px #58ff6c , 58px 58px #58ff6c , 59px 59px #58ff6c , 60px 60px #58ff6c , 61px 61px #58ff6c , 62px 62px #58ff6c , 63px 63px #58ff6c , 64px 64px #58ff6d , 65px 65px #59ff6d , 66px 66px #59ff6d , 67px 67px #59ff6d , 68px 68px #59ff6d , 69px 69px #59ff6d , 70px 70px #59ff6d , 71px 71px #59ff6d , 72px 72px #59ff6d , 73px 73px #59ff6d , 74px 74px #59ff6d , 75px 75px #59ff6d , 76px 76px #59ff6d , 77px 77px #59ff6d , 78px 78px #59ff6d , 79px 79px #59ff6d , 80px 80px #59ff6d , 81px 81px #59ff6d , 82px 82px #59ff6d , 83px 83px #59ff6d , 84px 84px #59ff6d , 85px 85px #59ff6d , 86px 86px #59ff6d , 87px 87px #59ff6d , 88px 88px #59ff6d , 89px 89px #59ff6d , 90px 90px #59ff6d , 91px 91px #59ff6d , 92px 92px #59ff6d , 93px 93px #59ff6d , 94px 94px #59ff6d , 95px 95px #59ff6d , 96px 96px #59ff6d , 97px 97px #59ff6d , 98px 98px #59ff6d , 99px 99px #59ff6d , 100px 100px #59ff6d; */
+  }
+  .card:nth-child(3) {
+    margin-right: 0;
+  }
+  .card:nth-child(3) .card__front {
+    background: #bdb235;
+  }
+  .card:nth-child(3) .card__num {
+    /* text-shadow: 1px 1px rgba(129, 122, 36, 0.8) , 2px 2px #bdb235 , 3px 3px #dbce3d , 4px 4px #eddf42 , 5px 5px #f9ea46 , 6px 6px #fff248 , 7px 7px #fff84a , 8px 8px #fffd4b , 9px 9px #ffff4c , 10px 10px #ffff4d , 11px 11px #ffff4e , 12px 12px #ffff4f , 13px 13px #ffff4f , 14px 14px #ffff50 , 15px 15px #ffff50 , 16px 16px #ffff51 , 17px 17px #ffff51 , 18px 18px #ffff51 , 19px 19px #ffff51 , 20px 20px #ffff52 , 21px 21px #ffff52 , 22px 22px #ffff52 , 23px 23px #ffff52 , 24px 24px #ffff52 , 25px 25px #ffff53 , 26px 26px #ffff53 , 27px 27px #ffff53 , 28px 28px #ffff53 , 29px 29px #ffff53 , 30px 30px #ffff53 , 31px 31px #ffff53 , 32px 32px #ffff53 , 33px 33px #ffff54 , 34px 34px #ffff54 , 35px 35px #ffff54 , 36px 36px #ffff54 , 37px 37px #ffff54 , 38px 38px #ffff54 , 39px 39px #ffff54 , 40px 40px #ffff54 , 41px 41px #ffff54 , 42px 42px #ffff54 , 43px 43px #ffff54 , 44px 44px #ffff54 , 45px 45px #ffff54 , 46px 46px #ffff54 , 47px 47px #ffff54 , 48px 48px #ffff54 , 49px 49px #ffff54 , 50px 50px #ff5 , 51px 51px #ff5 , 52px 52px #ff5 , 53px 53px #ff5 , 54px 54px #ff5 , 55px 55px #ff5 , 56px 56px #ff5 , 57px 57px #ff5 , 58px 58px #ff5 , 59px 59px #ff5 , 60px 60px #ff5 , 61px 61px #ff5 , 62px 62px #ff5 , 63px 63px #ff5 , 64px 64px #ff5 , 65px 65px #ff5 , 66px 66px #ff5 , 67px 67px #ff5 , 68px 68px #ff5 , 69px 69px #ff5 , 70px 70px #ff5 , 71px 71px #ff5 , 72px 72px #ff5 , 73px 73px #ff5 , 74px 74px #ff5 , 75px 75px #ff5 , 76px 76px #ff5 , 77px 77px #ff5 , 78px 78px #ff5 , 79px 79px #ff5 , 80px 80px #ff5 , 81px 81px #ff5 , 82px 82px #ff5 , 83px 83px #ff5 , 84px 84px #ff5 , 85px 85px #ff5 , 86px 86px #ff5 , 87px 87px #ff5 , 88px 88px #ff5 , 89px 89px #ff5 , 90px 90px #ff5 , 91px 91px #ff5 , 92px 92px #ff5 , 93px 93px #ff5 , 94px 94px #ff5 , 95px 95px #ff5 , 96px 96px #ff5 , 97px 97px #ff5 , 98px 98px #ff5 , 99px 99px #ffff56 , 100px 100px #ffff56; */
+  }
+  .card:nth-child(4) .card__front {
+    background: #db6623;
+  }
+  .card:nth-child(4) .card__num {
+    /* text-shadow: 1px 1px rgba(153, 71, 24, 0.8) , 2px 2px #db6623 , 3px 3px #fc7528 , 4px 4px #ff7f2b , 5px 5px #ff852e , 6px 6px #ff892f , 7px 7px #ff8c30 , 8px 8px #ff8f31 , 9px 9px #ff9132 , 10px 10px #ff9332 , 11px 11px #ff9433 , 12px 12px #ff9533 , 13px 13px #ff9634 , 14px 14px #ff9734 , 15px 15px #ff9834 , 16px 16px #ff9934 , 17px 17px #ff9935 , 18px 18px #ff9a35 , 19px 19px #ff9a35 , 20px 20px #ff9b35 , 21px 21px #ff9b35 , 22px 22px #ff9b35 , 23px 23px #ff9c35 , 24px 24px #ff9c36 , 25px 25px #ff9c36 , 26px 26px #ff9d36 , 27px 27px #ff9d36 , 28px 28px #ff9d36 , 29px 29px #ff9d36 , 30px 30px #ff9d36 , 31px 31px #ff9e36 , 32px 32px #ff9e36 , 33px 33px #ff9e36 , 34px 34px #ff9e36 , 35px 35px #ff9e36 , 36px 36px #ff9e36 , 37px 37px #ff9f36 , 38px 38px #ff9f36 , 39px 39px #ff9f37 , 40px 40px #ff9f37 , 41px 41px #ff9f37 , 42px 42px #ff9f37 , 43px 43px #ff9f37 , 44px 44px #ff9f37 , 45px 45px #ff9f37 , 46px 46px #ffa037 , 47px 47px #ffa037 , 48px 48px #ffa037 , 49px 49px #ffa037 , 50px 50px #ffa037 , 51px 51px #ffa037 , 52px 52px #ffa037 , 53px 53px #ffa037 , 54px 54px #ffa037 , 55px 55px #ffa037 , 56px 56px #ffa037 , 57px 57px #ffa037 , 58px 58px #ffa037 , 59px 59px #ffa037 , 60px 60px #ffa037 , 61px 61px #ffa037 , 62px 62px #ffa137 , 63px 63px #ffa137 , 64px 64px #ffa137 , 65px 65px #ffa137 , 66px 66px #ffa137 , 67px 67px #ffa137 , 68px 68px #ffa137 , 69px 69px #ffa137 , 70px 70px #ffa137 , 71px 71px #ffa137 , 72px 72px #ffa137 , 73px 73px #ffa137 , 74px 74px #ffa137 , 75px 75px #ffa137 , 76px 76px #ffa137 , 77px 77px #ffa137 , 78px 78px #ffa137 , 79px 79px #ffa137 , 80px 80px #ffa137 , 81px 81px #ffa137 , 82px 82px #ffa137 , 83px 83px #ffa137 , 84px 84px #ffa137 , 85px 85px #ffa137 , 86px 86px #ffa137 , 87px 87px #ffa137 , 88px 88px #ffa137 , 89px 89px #ffa137 , 90px 90px #ffa137 , 91px 91px #ffa137 , 92px 92px #ffa137 , 93px 93px #ffa137 , 94px 94px #ffa237 , 95px 95px #ffa237 , 96px 96px #ffa237 , 97px 97px #ffa237 , 98px 98px #ffa237 , 99px 99px #ffa237 , 100px 100px #ffa237; */
+  }
+  .card:nth-child(5) .card__front {
+    background: #3e5eb3;
+  }
+  .card:nth-child(5) .card__num {
+    /* text-shadow: 1px 1px rgba(42, 64, 122, 0.8) , 2px 2px #3e5eb3 , 3px 3px #486dcf , 4px 4px #4e76e0 , 5px 5px #527cec , 6px 6px #5480f4 , 7px 7px #5783fa , 8px 8px #5886ff , 9px 9px #5a88ff , 10px 10px #5b89ff , 11px 11px #5c8bff , 12px 12px #5c8cff , 13px 13px #5d8dff , 14px 14px #5d8eff , 15px 15px #5e8eff , 16px 16px #5e8fff , 17px 17px #5f90ff , 18px 18px #5f90ff , 19px 19px #5f91ff , 20px 20px #6091ff , 21px 21px #6092ff , 22px 22px #6092ff , 23px 23px #6092ff , 24px 24px #6193ff , 25px 25px #6193ff , 26px 26px #6193ff , 27px 27px #6193ff , 28px 28px #6194ff , 29px 29px #6194ff , 30px 30px #6294ff , 31px 31px #6294ff , 32px 32px #6294ff , 33px 33px #6294ff , 34px 34px #6295ff , 35px 35px #6295ff , 36px 36px #6295ff , 37px 37px #6295ff , 38px 38px #6295ff , 39px 39px #6295ff , 40px 40px #6295ff , 41px 41px #6395ff , 42px 42px #6396ff , 43px 43px #6396ff , 44px 44px #6396ff , 45px 45px #6396ff , 46px 46px #6396ff , 47px 47px #6396ff , 48px 48px #6396ff , 49px 49px #6396ff , 50px 50px #6396ff , 51px 51px #6396ff , 52px 52px #6396ff , 53px 53px #6396ff , 54px 54px #6396ff , 55px 55px #6396ff , 56px 56px #6397ff , 57px 57px #6397ff , 58px 58px #6397ff , 59px 59px #6397ff , 60px 60px #6397ff , 61px 61px #6397ff , 62px 62px #6397ff , 63px 63px #6497ff , 64px 64px #6497ff , 65px 65px #6497ff , 66px 66px #6497ff , 67px 67px #6497ff , 68px 68px #6497ff , 69px 69px #6497ff , 70px 70px #6497ff , 71px 71px #6497ff , 72px 72px #6497ff , 73px 73px #6497ff , 74px 74px #6497ff , 75px 75px #6497ff , 76px 76px #6497ff , 77px 77px #6497ff , 78px 78px #6497ff , 79px 79px #6497ff , 80px 80px #6497ff , 81px 81px #6497ff , 82px 82px #6498ff , 83px 83px #6498ff , 84px 84px #6498ff , 85px 85px #6498ff , 86px 86px #6498ff , 87px 87px #6498ff , 88px 88px #6498ff , 89px 89px #6498ff , 90px 90px #6498ff , 91px 91px #6498ff , 92px 92px #6498ff , 93px 93px #6498ff , 94px 94px #6498ff , 95px 95px #6498ff , 96px 96px #6498ff , 97px 97px #6498ff , 98px 98px #6498ff , 99px 99px #6498ff , 100px 100px #6498ff; */
+  }
+  .card:nth-child(6) .card__front {
+    background: #aa9e5c;
+  }
+  .card:nth-child(6) .card__num {
+    /* text-shadow: 1px 1px rgba(122, 113, 64, 0.8) , 2px 2px #aa9e5c , 3px 3px #c2b56a , 4px 4px #d0c273 , 5px 5px #dacb78 , 6px 6px #e1d17c , 7px 7px #e6d680 , 8px 8px #eada82 , 9px 9px #eddd84 , 10px 10px #f0e085 , 11px 11px #f2e287 , 12px 12px #f4e388 , 13px 13px #f6e589 , 14px 14px #f7e689 , 15px 15px #f8e78a , 16px 16px #f9e88b , 17px 17px #fae98b , 18px 18px #fbea8c , 19px 19px #fceb8c , 20px 20px #fceb8d , 21px 21px #fdec8d , 22px 22px #feec8d , 23px 23px #feed8e , 24px 24px #ffed8e , 25px 25px #ffee8e , 26px 26px #ffee8f , 27px 27px #ffee8f , 28px 28px #ffef8f , 29px 29px #ffef8f , 30px 30px #ffef8f , 31px 31px #fff090 , 32px 32px #fff090 , 33px 33px #fff090 , 34px 34px #fff090 , 35px 35px #fff190 , 36px 36px #fff190 , 37px 37px #fff190 , 38px 38px #fff190 , 39px 39px #fff191 , 40px 40px #fff291 , 41px 41px #fff291 , 42px 42px #fff291 , 43px 43px #fff291 , 44px 44px #fff291 , 45px 45px #fff291 , 46px 46px #fff291 , 47px 47px #fff291 , 48px 48px #fff391 , 49px 49px #fff391 , 50px 50px #fff391 , 51px 51px #fff392 , 52px 52px #fff392 , 53px 53px #fff392 , 54px 54px #fff392 , 55px 55px #fff392 , 56px 56px #fff392 , 57px 57px #fff392 , 58px 58px #fff492 , 59px 59px #fff492 , 60px 60px #fff492 , 61px 61px #fff492 , 62px 62px #fff492 , 63px 63px #fff492 , 64px 64px #fff492 , 65px 65px #fff492 , 66px 66px #fff492 , 67px 67px #fff492 , 68px 68px #fff492 , 69px 69px #fff492 , 70px 70px #fff492 , 71px 71px #fff492 , 72px 72px #fff493 , 73px 73px #fff493 , 74px 74px #fff593 , 75px 75px #fff593 , 76px 76px #fff593 , 77px 77px #fff593 , 78px 78px #fff593 , 79px 79px #fff593 , 80px 80px #fff593 , 81px 81px #fff593 , 82px 82px #fff593 , 83px 83px #fff593 , 84px 84px #fff593 , 85px 85px #fff593 , 86px 86px #fff593 , 87px 87px #fff593 , 88px 88px #fff593 , 89px 89px #fff593 , 90px 90px #fff593 , 91px 91px #fff593 , 92px 92px #fff593 , 93px 93px #fff593 , 94px 94px #fff593 , 95px 95px #fff593 , 96px 96px #fff593 , 97px 97px #fff593 , 98px 98px #fff593 , 99px 99px #fff593 , 100px 100px #fff593; */
+  }
+  .card:last-child {
+    margin-right: 0;
+  }
+  .card__flipper {
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .card__front, .card__back {
+    position: absolute;
+    backface-visibility: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 340px;
+  }
+  .card__front {
+    transform: rotateY(0);
+    z-index: 2;
+    overflow: hidden;
+  }
+  .card__back {
+    transform: rotateY(180deg) scale(1.1);
+    background: #141414;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  .card__back span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .card__name {
+    font-size: 32px;
+    line-height: 0.9;
+    font-weight: 700;
+    padding-top: 30px;
+  }
+  .card__name span {
+    font-size: 50px;
+  }
+  .card__num {
+    font-size: 50px;
+    margin: 0 8px 0 0;
+    font-weight: 700;
+  }
+  @media (max-width: 700px) {
+    .card__num {
+      font-size: 70px;
+    }
+  }
+  @media (max-width: 700px) {
+    .card {
+      width: 100%;
+      height: 290px;
+      margin-right: 0;
+      float: none;
+    }
+    .card .card__front, .card .card__back {
+      height: 290px;
+    }
+  }
+  /* Demo */
+  main {
+    text-align: center;
+  }
+  main h1, main p {
+    margin: 0 0 12px 0;
+  }
+  main h1 {
+    margin-top: 12px;
+    font-weight: 300;
+  }
+  .fa-twitter {
+    color: white;
+    font-size: 30px;
+  }
+  
+
+  /* others css */
+
+  @import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700);
+
+.card1 {
+  pointer-events: none;
+  transform: translateZ(0);
+  padding: 30px;
+  /* background: white; */
+  border-radius: 5px;
+  width: 400px;
+  height: 200px;
+  margin: auto;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  display: flex;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.card1:after {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  border-radius: 50%;
+  left: 0;
+  bottom: -50px;
+  box-shadow: 0 30px 20px rgba(0, 0, 0, 0.3);
+}
+.card1 .card-content {
+  margin: auto;
+  text-align: center;
+  transform-style: preserve-3d;
+}
+.card1 h1 {
+  transform: translateZ(100px);
+}
+.card1 p {
+  transform: translateZ(50px);
+  display: block;
+}
+.card1 p.related {
+  transform: translateZ(80px);
+  font-style: italic;
+}
+.card1 a {
+  color: #69c6b8;
+  pointer-events: auto;
+}
+
+/* other 2 css */
+
+@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+
+
+.header {
+  position:relative;
+  text-align:center;
+  background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+  color:white;
+  width: 100%;
+}
+.logo {
+  width:50px;
+  fill:white;
+  padding-right:15px;
+  display:inline-block;
+  vertical-align: middle;
+}
+
+.inner-header {
+  /* height:65vh; */
+  width:100%;
+  margin: 0;
+  padding: 0;
+}
+
+.flex { /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.waves {
+  position:relative;
+  width: 100%;
+  height:15vh;
+  margin-bottom:-7px; /*Fix for safari gap*/
+  min-height:100px;
+  max-height:150px;
+}
+
+.content {
+  position:relative;
+  height:20vh;
+  text-align:center;
+  background-color: white;
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height:40px;
+    min-height:40px;
+  }
+  .content {
+    height:30vh;
+  }
+  h1 {
+    font-size:24px;
+  }
+}
+
+/* Other 3 css */
+
+/* Reset Select */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #2c3e50;
+    background-image: none;
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  /* Custom Select */
+  .select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    background: #2c3e50;
+    overflow: hidden;
+    border-radius: .25em;
+  }
+  select {
+    flex: 1;
+    padding: 0 .5em;
+    color: #fff;
+    cursor: pointer;
+  }
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #34495e;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+  }
+  /* Transition */
+  .select:hover::after {
+    color: #f39c12;
+  }
+  
+
+  /* css 4 */
+
+
+.container-buttons {
+    /* width: 50vw; */
+    justify-content: center;
+    align-self: stretch;
+    display: grid;
+    /* grid-template-columns: repeat(3, auto); */
+    /* grid-gap: 50px; */
+    margin-top: 20px;
+  }
+  .button {
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    display: grid;
+  }
+  .button span {
+    margin: auto;
+    font-weight: 600;
+    display: block;
+    font-size: 1em;
+  }
+  /*****BUTTON BOUNCE*****/
+  .container-button {
+    cursor: pointer;
+  }
+  .container-button:hover .button {
+    animation: buttonAnimation 0.7s cubic-bezier(0.17, 0.67, 0.72, 1.53);
+  }
+  .container-button .button--bounce {
+    border-radius: 50px;
+    background-color: #fff;
+    box-shadow: 0.5px 5px tomato, 0.5px 20px 15px #00000080;
+    transform-origin: center bottom;
+    color: tomato;
+  }
+  @keyframes buttonAnimation {
+    0%, 30% {
+      transform: scale(1.5, 0.5);
+    }
+    30%, 40% {
+      transform: scale(1.3, 1);
+    }
+    30%, 50% {
+      transform: scale(1, 1.3);
+    }
+    50%, 70% {
+      transform: scale(1.2, 1);
+    }
+    70%, 90% {
+      transform: scale(1, 1.2);
+    }
+    90%, 100% {
+      transform: scale(1, 1);
+    }
+  }
+  
