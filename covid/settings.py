@@ -25,8 +25,9 @@ SECRET_KEY = '5qj5*e*wtm8)us^@69nt#&31ql)e9x8yk7fu4sf&9k1d+5i_^2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1',]
+ALLOWED_HOSTS = ['127.0.0.1','covidtrackerbyilmaan.herokuapp.com/']
 
+# SECRET EMAIL ID FOR LOGIN covidtrackerbyilmaan@openskins.com Ilmaan786*
 
 # Application definition
 
